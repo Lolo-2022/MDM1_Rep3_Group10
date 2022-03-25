@@ -4,7 +4,8 @@ Created on Mon Mar 21 11:52:37 2022
 
 @author: Lujain Altaiyan
 """
-import math
+
+
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.integrate import solve_ivp  
@@ -17,11 +18,12 @@ from mpl_toolkits.mplot3d import Axes3D
 
 h0 = [50] # m
 ai = 0.015 #m2 5 insh pipe
-vi = 8.5*1.52 * 60 * 60 # m/s*3600 = m/day
+vi = 10*1.52 * 60 * 60 # m/s*3600 = m/day
 
-ao = 0.015/2.5 #m2
+
+ao = 0.015/2.05 #m2
 g = 9.8 #m2/s 
-time_limit = 10 # days
+time_limit = 365 # days
 times = (0, time_limit)                               # Time range 365 days
 ttt = np.linspace(0, time_limit, time_limit * 200)                # Time evaluation points
 A = 100 # m2
