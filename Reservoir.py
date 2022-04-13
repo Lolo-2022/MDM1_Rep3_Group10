@@ -50,13 +50,13 @@ r = Radius of the outflow pipe
 
 def Rainfall(t):
     
-    #dR = cos(2π(t+31) / 365.24) + 9199.43 in m^3 per day
+    #dR/dt = 2628.41 cos(2π(t+31) / 365.24) + 9199.43 in m^3 per day
     dr = 9199.43 + 2628.41 * np.cos(2*np.pi*(t+31)/365.24)
     return dr
 
 
 def Riverflow(t):
-    #dI = 43200 cos(2π*t / 365.24) + 51840 in m^3 per day
+    #dI/dt = 43200 cos(2π*t / 365.24) + 51840 in m^3 per day
     di = 43200 *np.cos(2*np.pi*(t) / 365.24) + 51840
     return di
 
@@ -65,7 +65,7 @@ def Reservoir_volume(t,v):
     
     #dV/dt = dP/dt + dI/dt + dR/dt + dE/dt
     #dP/dt = πr^2 √(2gV/A), g = 9.81 m/s^2 = g_sq^2 = 270.1*10**3 m/day^2
-    #dR = cos(2π(t+31) / 365.24) + 9199.43 in m^3 per day
+    #dR/dt = 2628.41 cos(2π(t+31) / 365.24) + 9199.43 in m^3 per day
     #dI/dt = 43200 cos(2π*t / 365.24) + 51840   m^3/day    
     #dE/dt = -0.0019165A = -7665.98 m^3/day   
     #A = 4 x 10^6 m^2
