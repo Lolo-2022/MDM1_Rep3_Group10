@@ -27,7 +27,7 @@ def main():
         elif choise == 'f':
            required_volume = float( input("Enter required volume in meter cube"))
            r_max = 0.8
-           r_list = np.linspace(0.001,r_max,30)
+           r_list = np.linspace(0.001,r_max,40)
            v_end_list = []
            for r in r_list:
                model = SecondModelClass.Model_2(r)
@@ -40,14 +40,14 @@ def main():
            initial_volume = required_volume
             
                                             
-           v_g = min(v_end_list, key=lambda x:abs(x-10*10**7))
+           v_g = min(v_end_list, key=lambda x:abs(x-initial_volume))
            r_g = r_list[v_end_list.index(v_g)]
            print("The required drainpipe radius is: ",r_g) 
             
            plt.plot(r_list,v_end_list, 'b') 
            plt.plot(r_list,[initial_volume for _ in range(len(r_list))], linestyle = 'dashed', color = 'r')
            plt.plot([r_g for _ in range(len(v_end_list))],v_end_list,linestyle = 'dashed',color = 'r')
-           plt.text(0.1,3.3*10**7, 'v0 = $3.3x10^7$', fontsize = 18)
+           plt.text(0.1,initial_volume, 'v = $15 x 10^7$', fontsize = 18)
            # plt.text(-5, 60, 'Parabola $Y = x^2$', fontsize = 22)
             
            plt.title("Change of water volume after one year per drain pipe radius ", y=1.08)
