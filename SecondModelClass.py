@@ -19,8 +19,8 @@ class Model_2:
         self.ttt =  np.linspace(0,time_limit,time_limit * 100)             # Time evaluation points
 
 
-        self.v0 = [3.3*10**7] # m^3 ; a = 4 x 10^6 m^2 & h = 15 m start water hight
-        # self.v0 = [15*10**7] # m^3 ; a = 4 x 10^6 m^2 & h = 15 m start water hight
+        # self.v0 = [3.3*10**7] # m^3 ; a = 4 x 10^6 m^2 & h = 15 m start water hight
+        self.v0 = [15*10**7] # m^3 ; a = 4 x 10^6 m^2 & h = 15 m start water hight
         self.r = drain_pipe_radius # m for pipe try change the pipe's radius to see curvatue of graph.
 
  
